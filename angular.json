@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "world-bank": "apps/world-bank",
+    "world-bank-e2e": "apps/world-bank-e2e"
+  }
+}
