@@ -4,6 +4,17 @@
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "johnpapa.angular-essentials",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "abusaidm.html-snippets",
+    "visualstudioexptteam.vscodeintellicode",
+    "xabikos.javascriptsnippets",
+    "davidanson.vscode-markdownlint",
+    "syler.sass-indented",
+    "meganrogge.template-string-converter"
   ]
 }
