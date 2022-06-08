@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/typescript-common/src",
+  "prefix": "curso-performance-angular",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/typescript-common"],
+      "options": {
+        "jestConfig": "libs/typescript-common/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/typescript-common/**/*.ts",
+          "libs/typescript-common/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
