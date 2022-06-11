@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  showHideSidenav: boolean;
-
-  constructor(public _location: Location) {
-    this.showHideSidenav = true;
-  }
 }

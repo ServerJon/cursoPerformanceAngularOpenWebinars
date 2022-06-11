@@ -1,1 +1,7 @@
-<p>region works!</p>
+<section *ngIf="countries.length > 0">
+  <curso-performance-angular-region-view
+    [countries]="countries"
+    (goTo)="goToCountry($event)"
+  >
+  </curso-performance-angular-region-view>
+</section>

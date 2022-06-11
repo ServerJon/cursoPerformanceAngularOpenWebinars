@@ -6,6 +6,7 @@ export * from './lib/constants/API';
 // Models
 export * from './lib/models/region.interface';
 export * from './lib/models/common.interface';
+export * from './lib/models/country.interface';
 
 // Functions
 export { isPositiveNumeric } from './lib/functions/positive-numeric';

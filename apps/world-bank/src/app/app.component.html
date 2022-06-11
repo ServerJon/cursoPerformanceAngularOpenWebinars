@@ -2,20 +2,10 @@
   <button
       mat-icon-button
       aria-label="Icon-button with menu icon"
-      *ngIf="showHideSidenav; else backArrow"
       (click)="drawer.toggle()"
   >
       <mat-icon>menu</mat-icon>
   </button>
-  <ng-template #backArrow>
-      <button
-          mat-icon-button
-          aria-label="Icon-button with arrow icon"
-          (click)="_location.back()"
-      >
-          <mat-icon>west</mat-icon>
-      </button>
-  </ng-template>
   <span>Curso Mejorando la Performance de nuestros proyectos</span>
 </mat-toolbar>
 

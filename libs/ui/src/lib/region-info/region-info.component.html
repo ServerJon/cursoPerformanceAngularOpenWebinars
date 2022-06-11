@@ -1,29 +1,27 @@
-<section>
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
-    </ng-container>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="iso2code">
-      <mat-header-cell *matHeaderCellDef> Iso2code </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.iso2code }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="iso2code">
+    <mat-header-cell *matHeaderCellDef> Iso2code </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.iso2code }} </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="code">
-      <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.code }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="code">
+    <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.code }} </mat-cell>
+  </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row
-      *matRowDef="let row; columns: displayedColumns"
-      (click)="goToRegion(row)"
-    ></mat-row>
-  </mat-table>
-</section>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="goToRegion(row)"
+  ></mat-row>
+</mat-table>
