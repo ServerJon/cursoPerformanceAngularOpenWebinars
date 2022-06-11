@@ -35,7 +35,7 @@ export class RegionComponent implements OnInit, OnDestroy {
   }
 
   private getCountries(code: string): void {
-    this.countryService.get(code).pipe(takeUntil(this.destructor)).subscribe(
+    this.countryService.getCountriesByRegion(code).pipe(takeUntil(this.destructor)).subscribe(
       {
         next: (response: Country[]) => {
           this.countries = response;

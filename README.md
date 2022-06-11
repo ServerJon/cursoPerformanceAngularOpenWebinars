@@ -8,7 +8,7 @@ El proyecto consistirá en una aplicación para explorar la información disponi
 
 Tendremos una primera pagina donde mostraremos las regiones geográficas continentales filtradas por aquellas que sí tengan `id` numérico.
 
-Navegaremos hacia la página de una región y en ella mostraremos los datos básicos del continente y los países pertenecientes.
+Navegaremos hacia la página de una región y en ella mostraremos los países pertenecientes.
 
 Y por último navegaremos hasta la página de un país y veremos los datos básicos de ese país.
 

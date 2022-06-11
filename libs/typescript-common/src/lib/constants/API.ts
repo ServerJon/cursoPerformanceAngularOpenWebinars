@@ -1,1 +1,1 @@
-export const API_URL = 'http://api.worldbank.org/v2/'
+export const API_URL = 'http://api.worldbank.org/v2';
