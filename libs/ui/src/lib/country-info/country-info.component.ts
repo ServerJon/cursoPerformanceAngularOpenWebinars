@@ -20,7 +20,7 @@ import { Country } from '@typescript-common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CountryInfoComponent implements OnInit {
-  @Input() public countries: Country[];
+  @Input() public countries!: Country[];
   @Output() public goTo = new EventEmitter<string>();
   @ViewChild(MatSort, { static: true })
   sort!: MatSort;
@@ -33,10 +33,6 @@ export class CountryInfoComponent implements OnInit {
     'latitude',
   ];
   public dataSource!: MatTableDataSource<Country>;
-
-  constructor() {
-    this.countries = [];
-  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.countries);

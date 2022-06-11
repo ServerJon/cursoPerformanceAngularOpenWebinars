@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ReplaySubject, takeUntil } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { CountryService } from '@data';
 import { Country } from '@typescript-common';
@@ -9,16 +9,15 @@ import { Country } from '@typescript-common';
 @Component({
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CountryComponent implements OnInit, OnDestroy {
-  country!: Country;
-  private destructor: ReplaySubject<void>;
+export class CountryComponent implements OnInit {
+  country$!: Observable<Country | undefined>;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private countryService: CountryService
   ) {
-    this.destructor = new ReplaySubject<void>();
   }
 
   ngOnInit(): void {
@@ -28,20 +27,7 @@ export class CountryComponent implements OnInit, OnDestroy {
   }
 
   private getCountry(id: string): void {
-    this.countryService
-      .getCountry(id)
-      .pipe(takeUntil(this.destructor))
-      .subscribe({
-        next: (response: Country | undefined) => {
-          console.log(response);
-
-          if (response) this.country = response;
-        },
-      });
-  }
-
-  async ngOnDestroy(): Promise<void> {
-    this.destructor.next();
-    this.destructor.complete();
+    this.country$ = this.countryService
+      .getCountry(id);
   }
 }

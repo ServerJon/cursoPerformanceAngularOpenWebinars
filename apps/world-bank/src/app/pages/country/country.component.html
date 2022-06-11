@@ -1,7 +1,7 @@
 <header>
   <h2>Información de:</h2>
 </header>
-<section *ngIf="country">
+<section *ngIf="country$ | async as country">
   <curso-performance-angular-country-view
     [country]="country"
   ></curso-performance-angular-country-view>

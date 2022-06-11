@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Country } from '@typescript-common';
 
@@ -6,6 +6,7 @@ import { Country } from '@typescript-common';
   selector: 'curso-performance-angular-region-view',
   templateUrl: './region-view.component.html',
   styleUrls: ['./region-view.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegionViewComponent {
   @Input() public countries!: Country[];

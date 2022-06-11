@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Region } from '@typescript-common';
 
@@ -6,6 +6,7 @@ import { Region } from '@typescript-common';
   selector: 'curso-performance-angular-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InfoComponent {
   @Input() public regions!: Region[];

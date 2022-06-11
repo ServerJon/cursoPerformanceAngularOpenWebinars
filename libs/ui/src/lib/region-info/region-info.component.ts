@@ -19,17 +19,13 @@ import { Region } from '@typescript-common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegionInfoComponent implements OnInit {
-  @Input() public regions: Region[];
+  @Input() public regions!: Region[];
   @Output() public goTo = new EventEmitter<string>();
   @ViewChild(MatSort, { static: true })
   sort!: MatSort;
 
   public displayedColumns: string[] = ['id', 'name', 'iso2code', 'code'];
   public dataSource!: MatTableDataSource<Region>;
-
-  constructor() {
-    this.regions = [];
-  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.regions);

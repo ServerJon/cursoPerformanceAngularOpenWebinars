@@ -1,4 +1,4 @@
-<section *ngIf="countries.length > 0">
+<section *ngIf="countries$ | async as countries">
   <curso-performance-angular-region-view
     [countries]="countries"
     (goTo)="goToCountry($event)"
