@@ -1,1 +1,105 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button
+      mat-icon-button
+      aria-label="Icon-button with menu icon"
+      *ngIf="showHideSidenav; else backArrow"
+      (click)="drawer.toggle()"
+  >
+      <mat-icon>menu</mat-icon>
+  </button>
+  <ng-template #backArrow>
+      <button
+          mat-icon-button
+          aria-label="Icon-button with arrow icon"
+          (click)="_location.back()"
+      >
+          <mat-icon>west</mat-icon>
+      </button>
+  </ng-template>
+  <span>Curso Mejorando la Performance de nuestros proyectos</span>
+</mat-toolbar>
+
+<mat-drawer-container class="body-container" autosize hasBackdrop="true">
+  <mat-drawer #drawer class="sidenav-menu" mode="side">
+      <h3><mat-icon>explore</mat-icon> Cursos útiles OpenWebinars:</h3>
+      <mat-list role="list">
+          <mat-list-item role="listitem">
+              <mat-icon>flight_takeoff</mat-icon>
+              <a
+                  href="https://openwebinars.net/academia/portada/angular/"
+                  target="_blank"
+              >
+                  Introducción a Angular</a
+              >
+          </mat-list-item>
+          <mat-list-item role="listitem">
+              <mat-icon>tips_and_updates</mat-icon>
+              <a
+                  href="https://openwebinars.net/academia/portada/angular-ampliar-conceptos/"
+                  target="_blank"
+              >
+                  Ampliando conceptos sobre Angular</a
+              >
+          </mat-list-item>
+          <mat-list-item role="listitem">
+              <mat-icon>smartphone</mat-icon>
+              <a
+                  href="https://openwebinars.net/academia/portada/angular-multiplataforma/"
+                  target="_blank"
+              >
+                  Angular en el mundo de la multiplataforma</a
+              >
+          </mat-list-item>
+      </mat-list>
+      <h3><mat-icon>info</mat-icon> Cursos/Talleres extra:</h3>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+            <mat-icon>arrow_circle_up</mat-icon>
+            <a
+                href="https://openwebinars.net/academia/portada/nativescript-angular/"
+                target="_blank"
+            >
+                Curso: Desarrollo de apps con Nativescript</a
+            >
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>arrow_circle_up</mat-icon>
+          <a
+              href="https://openwebinars.net/academia/portada/diseno-material-design-angular/"
+              target="_blank"
+          >
+              Taller: Diseño web con Material Design para Angular</a
+          >
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>arrow_circle_up</mat-icon>
+          <a
+              href="https://openwebinars.net/academia/portada/crear-pwa-angular/"
+              target="_blank"
+          >
+              Taller: PWA en Angular</a
+          >
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>arrow_circle_up</mat-icon>
+          <a
+              href="https://openwebinars.net/academia/portada/nativescript-uso-componentes/"
+              target="_blank"
+          >
+              Taller: Uso de componentes nativos en Nativescript</a
+          >
+        </mat-list-item>
+      </mat-list>
+      <h3><mat-icon>info</mat-icon> Documentación oficial:</h3>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+            <mat-icon>description</mat-icon>
+            <a href="https://angular.io/" target="_blank">Angular</a>
+        </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+      <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
