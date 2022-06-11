@@ -5,9 +5,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/world-bank",
         "index": "apps/world-bank/src/index.html",
@@ -87,9 +85,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/world-bank"
-      ],
+      "outputs": ["coverage/apps/world-bank"],
       "options": {
         "jestConfig": "apps/world-bank/jest.config.ts",
         "passWithNoTests": true

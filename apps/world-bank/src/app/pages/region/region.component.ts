@@ -11,7 +11,6 @@ import { CountryService } from '@data';
   styleUrls: ['./region.component.scss'],
 })
 export class RegionComponent implements OnInit, OnDestroy {
-
   countries: Country[];
   private destructor: ReplaySubject<void>;
 
@@ -25,7 +24,7 @@ export class RegionComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params) => {
       this.getCountries(params['code']);
     });
   }
@@ -35,13 +34,14 @@ export class RegionComponent implements OnInit, OnDestroy {
   }
 
   private getCountries(code: string): void {
-    this.countryService.getCountriesByRegion(code).pipe(takeUntil(this.destructor)).subscribe(
-      {
+    this.countryService
+      .getCountriesByRegion(code)
+      .pipe(takeUntil(this.destructor))
+      .subscribe({
         next: (response: Country[]) => {
           this.countries = response;
-        }
-      }
-    )
+        },
+      });
   }
 
   async ngOnDestroy(): Promise<void> {

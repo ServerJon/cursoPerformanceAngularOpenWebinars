@@ -5,7 +5,7 @@ import { Country } from '@typescript-common';
 @Component({
   selector: 'curso-performance-angular-region-view',
   templateUrl: './region-view.component.html',
-  styleUrls: ['./region-view.component.scss']
+  styleUrls: ['./region-view.component.scss'],
 })
 export class RegionViewComponent {
   @Input() public countries!: Country[];
@@ -14,5 +14,4 @@ export class RegionViewComponent {
   goToCountry(code: string): void {
     this.goTo.emit(code);
   }
-
 }

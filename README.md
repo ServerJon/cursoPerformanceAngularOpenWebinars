@@ -18,21 +18,21 @@ En el transcurso del desarrollo de este proyecto iremos implementando las difere
 
 Descargar el proyecto con `git clone`:
 
-  > git clone git@github.com:ServerJon/cursoPerformanceAngularOpenWebinars.git
+> git clone git@github.com:ServerJon/cursoPerformanceAngularOpenWebinars.git
 
 Entrar a la raíz del proyecto:
 
-  > cd cursoPerformanceAngularOpenWebinars
+> cd cursoPerformanceAngularOpenWebinars
 
 E instalar los paquete necesarios de npm:
 
-  > npm install
+> npm install
 
 ## Para cambiar de rama según avanza el curso
 
-  > git checkout nombreRama
+> git checkout nombreRama
 
-  > git checkout 00_introduccion # Por ejemplo
+> git checkout 00_introduccion # Por ejemplo
 
 ## Información de la tecnología utilizada
 

@@ -17,18 +17,12 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/world-bank-e2e/**/*.{js,ts}"
-        ]
+        "lintFilePatterns": ["apps/world-bank-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": [
-    "world-bank"
-  ]
+  "implicitDependencies": ["world-bank"]
 }

@@ -9,7 +9,13 @@ import { AppMaterialModule } from './app-material.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, AppMaterialModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppMaterialModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

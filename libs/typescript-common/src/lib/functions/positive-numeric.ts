@@ -5,4 +5,4 @@
  */
 export const isPositiveNumeric = (value: string): boolean => {
   return /^\d+$/.test(value);
-}
+};

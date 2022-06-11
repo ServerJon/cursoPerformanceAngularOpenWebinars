@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-
 import { Region } from '@typescript-common';
 
 @Component({

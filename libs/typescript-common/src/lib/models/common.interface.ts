@@ -1,6 +1,6 @@
 export interface InformationPage {
-  page:       string;
-  pages:      string;
-  per_page:   string;
-  total:      string;
+  page: string;
+  pages: string;
+  per_page: string;
+  total: string;
 }

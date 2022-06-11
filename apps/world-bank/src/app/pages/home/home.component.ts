@@ -11,14 +11,10 @@ import { Region } from '@typescript-common';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
   public regions: Region[];
   private destructor: ReplaySubject<void>;
 
-  constructor(
-    private regionService: RegionService,
-    private router: Router
-  ) {
+  constructor(private regionService: RegionService, private router: Router) {
     this.regions = [];
     this.destructor = new ReplaySubject<void>();
   }
@@ -32,13 +28,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private getRegions(): void {
-    this.regionService.get().pipe(takeUntil(this.destructor)).subscribe(
-      {
+    this.regionService
+      .get()
+      .pipe(takeUntil(this.destructor))
+      .subscribe({
         next: (response: Region[]) => {
           this.regions = response;
-        }
-      }
-    )
+        },
+      });
   }
 
   async ngOnDestroy(): Promise<void> {
