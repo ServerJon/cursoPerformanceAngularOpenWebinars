@@ -10,6 +10,16 @@ const routes: Routes = [
         loadChildren: () =>
             import('./pages/home/home.module').then(m => m.HomeModule),
     },
+    {
+      path: 'region/:code',
+      loadChildren: () =>
+          import('./pages/region/region.module').then(m => m.RegionModule),
+    },
+    {
+      path: 'country/:id',
+      loadChildren: () =>
+          import('./pages/country/country.module').then(m => m.CountryModule),
+    },
 
     {
         path: '', redirectTo: '/home', pathMatch: 'full'
