@@ -4,6 +4,7 @@
   "projects": {
     "data": "libs/data",
     "typescript-common": "libs/typescript-common",
+    "ui": "libs/ui",
     "world-bank": "apps/world-bank",
     "world-bank-e2e": "apps/world-bank-e2e"
   }
