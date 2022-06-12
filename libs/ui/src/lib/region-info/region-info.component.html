@@ -1,7 +1,7 @@
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{ element.id | customId }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="name">
@@ -23,5 +23,6 @@
   <mat-row
     *matRowDef="let row; columns: displayedColumns"
     (click)="goToRegion(row)"
+    [cursoPerformanceAngularCheckId]="row.id"
   ></mat-row>
 </mat-table>

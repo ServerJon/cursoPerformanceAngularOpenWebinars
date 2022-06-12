@@ -5,7 +5,6 @@ import { map, Observable } from 'rxjs';
 import {
   API_URL,
   Region,
-  isPositiveNumeric,
   InformationPage,
 } from '@typescript-common';
 
@@ -18,9 +17,7 @@ export class RegionService {
       .get<[InformationPage, Region[]]>(`${API_URL}/region/?format=json`)
       .pipe(
         map((response: [InformationPage, Region[]]) => {
-          return response[1].filter((region: Region) =>
-            isPositiveNumeric(region.id)
-          );
+          return response[1];
         })
       );
   }
