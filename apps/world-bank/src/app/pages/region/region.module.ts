@@ -5,11 +5,11 @@ import { RegionRoutingModule } from './region-routing.module';
 import { RegionComponent } from './region.component';
 import { CountryService } from '@data';
 import { RegionViewComponent } from './components/region-view/region-view.component';
-import { CountryInfoModule } from '@ui';
+import { CountryInfoModule, MainInfoTemplateModule } from '@ui';
 
 @NgModule({
   declarations: [RegionComponent, RegionViewComponent],
   providers: [CountryService],
-  imports: [CommonModule, RegionRoutingModule, CountryInfoModule],
+  imports: [CommonModule, RegionRoutingModule, CountryInfoModule, MainInfoTemplateModule],
 })
 export class RegionModule {}

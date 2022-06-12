@@ -1,10 +1,17 @@
-<header>
+<ng-template #header>
   <h2>Listado Regiones</h2>
-</header>
-<main>
+</ng-template>
+
+<ng-template #main>
   <curso-performance-angular-region-info
     [regions]="regions"
     (goTo)="goToRegion($event)"
   >
   </curso-performance-angular-region-info>
-</main>
+</ng-template>
+
+<curso-performance-angular-main-info-template
+  [header]="header"
+  [main]="main"
+>
+</curso-performance-angular-main-info-template>

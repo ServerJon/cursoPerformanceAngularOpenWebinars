@@ -1,8 +1,8 @@
-<header>
-  <h2>Información de:</h2>
-</header>
-<section *ngIf="country$ | async as country">
-  <curso-performance-angular-country-view
-    [country]="country"
-  ></curso-performance-angular-country-view>
-</section>
+<curso-performance-angular-main-info-content>
+  <h2 class="header">Información de:</h2>
+  <section *ngIf="country$ | async as country" class="main">
+    <curso-performance-angular-country-view
+      [country]="country"
+    ></curso-performance-angular-country-view>
+  </section>
+</curso-performance-angular-main-info-content>
