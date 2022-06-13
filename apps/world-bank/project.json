@@ -5,9 +5,11 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/world-bank",
+        "outputPath": "dist/apps/world-bank/browser",
         "index": "apps/world-bank/src/index.html",
         "main": "apps/world-bank/src/main.ts",
         "polyfills": "apps/world-bank/src/polyfills.ts",
@@ -85,11 +87,56 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/world-bank"],
+      "outputs": [
+        "coverage/apps/world-bank"
+      ],
       "options": {
         "jestConfig": "apps/world-bank/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/world-bank/server",
+        "main": "apps/world-bank/src/main.server.ts",
+        "tsConfig": "apps/world-bank/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/world-bank/src/environments/environment.ts",
+              "with": "apps/world-bank/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "app-shell": {
+      "executor": "@angular-devkit/build-angular:app-shell",
+      "options": {
+        "route": "shell"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "world-bank:build:production",
+          "serverTarget": "world-bank:server:production"
+        },
+        "development": {
+          "browserTarget": "world-bank:build:development",
+          "serverTarget": "world-bank:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []

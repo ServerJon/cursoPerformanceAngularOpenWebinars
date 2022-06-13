@@ -5,7 +5,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/typescript-common"],
+      "outputs": [
+        "coverage/libs/typescript-common"
+      ],
       "options": {
         "jestConfig": "libs/typescript-common/jest.config.ts",
         "passWithNoTests": true

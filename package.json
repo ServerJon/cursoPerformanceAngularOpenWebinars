@@ -9,7 +9,9 @@
     "build": "nx build",
     "test": "nx test",
     "format:write": "prettier --ignore-path .gitignore --write .",
-    "lint": "nx run-many --all --target=lint"
+    "lint": "nx run-many --all --target=lint",
+    "shell:dev": "nx run world-bank:app-shell:development",
+    "shell:prod": "nx run world-bank:app-shell:production"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/material": "^13.3.9",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/platform-server": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@nrwl/angular": "13.2.1",
     "rxjs": "~7.4.0",
