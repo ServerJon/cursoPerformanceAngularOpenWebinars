@@ -9,7 +9,9 @@
     "build": "nx build",
     "test": "nx test",
     "format:write": "prettier --ignore-path .gitignore --write .",
-    "lint": "nx run-many --all --target=lint"
+    "lint": "nx run-many --all --target=lint",
+    "world-bank:serve-ssr": "nx run world-bank:serve-ssr",
+    "world-bank:server": "npm run build && nx run world-bank:server"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,9 @@
     "@angular/material": "^13.3.9",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/platform-server": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@nguniversal/express-engine": "^14.0.0",
     "@nrwl/angular": "13.2.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
@@ -36,6 +40,7 @@
     "@angular/cli": "~13.3.0",
     "@angular/compiler-cli": "~13.3.0",
     "@angular/language-service": "~13.3.0",
+    "@nguniversal/builders": "^14.0.0",
     "@nrwl/cli": "14.1.9",
     "@nrwl/cypress": "14.1.9",
     "@nrwl/eslint-plugin-nx": "14.1.9",
