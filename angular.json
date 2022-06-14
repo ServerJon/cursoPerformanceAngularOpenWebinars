@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "data": "libs/data",
+    "greetings": "apps/greetings",
     "typescript-common": "libs/typescript-common",
     "ui": "libs/ui",
     "world-bank": "apps/world-bank",
