@@ -11,7 +11,8 @@
     "format:write": "prettier --ignore-path .gitignore --write .",
     "lint": "nx run-many --all --target=lint",
     "world-bank:serve-ssr": "nx run world-bank:serve-ssr",
-    "world-bank:server": "npm run build && nx run world-bank:server"
+    "world-bank:server": "npm run build && nx run world-bank:server",
+    "build:greetings": "nx build --single-bundle --output-hashing none --project greetings"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,7 @@
     "@angular/router": "~13.3.0",
     "@nguniversal/express-engine": "^14.0.0",
     "@nrwl/angular": "13.2.1",
+    "ngx-build-plus": "^13.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

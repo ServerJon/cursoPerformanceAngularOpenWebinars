@@ -8,7 +8,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class GreetingsComponent {
 
-  public saludar(name: string): void {
+  public greetings(name: string): void {
     alert(`Saludos ${name}, es un placer!`);
   }
 }

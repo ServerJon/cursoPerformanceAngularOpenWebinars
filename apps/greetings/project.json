@@ -1,12 +1,13 @@
 {
   "projectType": "application",
-  "root": "apps/greetings",
   "sourceRoot": "apps/greetings/src",
   "prefix": "curso-performance-angular",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "ngx-build-plus:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/greetings",
         "index": "apps/greetings/src/index.html",
@@ -18,7 +19,9 @@
           "apps/greetings/src/favicon.ico",
           "apps/greetings/src/assets"
         ],
-        "styles": ["apps/greetings/src/styles.scss"],
+        "styles": [
+          "apps/greetings/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -55,7 +58,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "ngx-build-plus:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "greetings:build:production"
@@ -67,7 +70,7 @@
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
         "browserTarget": "greetings:build"
       }
@@ -82,8 +85,10 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/greetings"],
+      "executor": "ngx-build-plus:karma",
+      "outputs": [
+        "coverage/apps/greetings"
+      ],
       "options": {
         "jestConfig": "apps/greetings/jest.config.js",
         "passWithNoTests": true
