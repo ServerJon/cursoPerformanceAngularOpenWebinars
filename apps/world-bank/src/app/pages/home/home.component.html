@@ -1,0 +1,7 @@
+<section *ngIf="regions.length > 0">
+  <curso-performance-angular-info
+    [regions]="regions"
+    (gone)="goToRegion($event)"
+  >
+  </curso-performance-angular-info>
+</section>

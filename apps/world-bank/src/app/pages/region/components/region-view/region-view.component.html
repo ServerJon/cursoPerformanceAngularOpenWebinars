@@ -1,0 +1,17 @@
+<ng-template #header>
+  <h2>Listado Países</h2>
+</ng-template>
+
+<ng-template #main>
+  <curso-performance-angular-country-info
+    [countries]="countries"
+    (goTo)="goToCountry($event)"
+  >
+  </curso-performance-angular-country-info>
+</ng-template>
+
+<curso-performance-angular-main-info-template
+  [header]="header"
+  [main]="main"
+>
+</curso-performance-angular-main-info-template>
